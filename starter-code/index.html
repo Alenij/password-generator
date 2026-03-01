@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Password generator</title>
+  </head>
+  <body
+    class="bg-gradient-to-r from-[#14131B] to-[#08070B] min-h-screen flex items-center"
+  >
+    <div class="max-w-xs mx-auto w-full p-4">
+      <header class="text-center mb-3">
+        <h1 class="text-[#817D92] text-xs">Password Generator</h1>
+      </header>
+      <main>
+        <section>
+          <div class="bg-[#24232c] flex justify-between items-center p-2 mb-3">
+            <p id="password" class="text-[#54535B]">P4$5W0rD!</p>
+            <!-- #E6E5EA -->
+            <div class="flex gap-1 items-center">
+              <span
+                id="copied"
+                class="hidden text-[clamp(10px,1.5vw,12px)] text-[#A4FFAF]"
+                >COPIED!</span
+              >
+              <img
+                src="./assets/images/icon-copy.svg"
+                alt="copy-icon.svg"
+                id="copy-icon"
+                class="w-3 h-3 copy-icon"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="bg-[#24232c] p-3">
+            <!-- header -->
+            <div class="flex justify-between items-center mb-2">
+              <p class="text-[#E6E5EA] text-[clamp(10px,1.5vw,12px)]">
+                Character Length
+              </p>
+              <p class="text-[#A4FFAF]" id="character-no">0</p>
+            </div>
+
+            <!-- Slider -->
+            <div class="mb-4">
+              <input
+                id="slider"
+                type="range"
+                min="0"
+                max="20"
+                value="0"
+                class="w-full h-1 appearance-none cursor-pointer rounded-none"
+                style="--fill: 0%"
+              />
+            </div>
+
+            <!-- Lists -->
+            <ul class="text-[11px] text-[#E6E5EA] mb-2">
+              <li class="flex items-center gap-3 mb-2">
+                <div id="uppercase" class="flex items-center checkbox-box box">
+                  <img
+                    src="./assets/images/icon-check.svg"
+                    alt="check-icon"
+                    id="uppercase"
+                    class="check-icon"
+                  />
+                </div>
+                <span class="text-[clamp(10px,1.5vw,12px)]"
+                  >Include Uppercase Letters</span
+                >
+              </li>
+              <li class="flex items-center gap-3 mb-2">
+                <div id="lowercase" class="flex items-center checkbox-box box">
+                  <img
+                    src="./assets/images/icon-check.svg"
+                    alt="check-icon"
+                    class="check-icon"
+                  />
+                </div>
+                <span class="text-[clamp(10px,1.5vw,12px)]"
+                  >Include Lowercase Letters</span
+                >
+              </li>
+              <li class="flex items-center gap-3 mb-2">
+                <div id="numbers" class="flex items-center checkbox-box box">
+                  <img
+                    src="./assets/images/icon-check.svg"
+                    alt="check-icon"
+                    class="check-icon"
+                  />
+                </div>
+                <span class="text-[clamp(10px,1.5vw,12px)]"
+                  >Include Numbers</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <div id="symbols" class="flex items-center checkbox-box box">
+                  <img
+                    src="./assets/images/icon-check.svg"
+                    alt="check-icon"
+                    class="check-icon"
+                  />
+                </div>
+                <span class="text-[clamp(10px,1.5vw,12px)]"
+                  >Include Symbols</span
+                >
+              </li>
+            </ul>
+
+            <!-- strength -->
+
+            <div
+              class="bg-[#14131B] flex justify-between items-center p-2 mb-2"
+            >
+              <p class="text-[clamp(10px,1.5vw,12px)] text-[#817D92]">
+                STRENGTH
+              </p>
+              <div class="flex gap-2 items-center">
+                <span
+                  id="strength-indicator"
+                  class="text-[clamp(11px,1.5vw,12px)] text-[#E6E5EA]"
+                ></span>
+                <div
+                  class="strength-bar w-2 h-[clamp(18px,1.5vw,20px)] border-2 border-[#E6E5EA]"
+                ></div>
+                <div
+                  class="strength-bar w-2 h-[clamp(18px,1.5vw,20px)] border-2 border-[#E6E5EA]"
+                ></div>
+                <div
+                  class="strength-bar w-2 h-[clamp(18px,1.5vw,20px)] border-2 border-[#E6E5EA]"
+                ></div>
+                <div
+                  class="strength-bar w-2 h-[clamp(18px,1.5vw,20px)] border-2 border-[#E6E5EA]"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Generate button -->
+            <div
+              id="generate-btn"
+              class="hover:border-1 hover:text-[#A4FFAF] hover:border-[#A4FFAF] hover:bg-[#24232c] bg-[#A4FFAF] flex gap-1 items-center justify-center p-2"
+            >
+              <span class="text-[10px]">GENERATE</span>
+              <img
+                src="./assets/images/icon-arrow-right.svg"
+                alt="right-arrow-icon.svg"
+                class="w-2 h-2"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script defer src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+body {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.checkbox-box {
+  width: clamp(12px, 1.5vw, 14px);
+  height: clamp(12px, 1.5vw, 14px);
+}
+
+.box {
+  border: 2px solid #e6e5ea;
+}
+
+.password {
+  color: #e6e5ea;
+}
+
+.check-icon {
+  display: none;
+}
+
+.uppercase {
+  background-color: #f64a4a;
+  border: none !important;
+}
+
+.lowercase {
+  background-color: #fb7c58;
+  border: none !important;
+}
+
+.number {
+  background-color: #f8cd65;
+  border: none !important;
+}
+
+.symbol {
+  background-color: #a4ffaf;
+  border: none !important;
+}
+
+.icon {
+  display: block;
+}
+
+.checked {
+  border: 2px solid #a4ffaf;
+  background-color: #a4ffaf;
+}
+
+.checkbox-box:hover {
+  border: 2px solid #a4ffaf;
+}
+
+#slider {
+  background: linear-gradient(
+    to right,
+    #a4ffaf var(--fill),
+    #18171f var(--fill)
+  );
+}
+
+#slider::-webkit-slider-thumb {
+  appearance: none;
+  width: clamp(15px, 1.5vw, 20px);
+  height: clamp(15px, 1.5vw, 20px);
+  border-radius: 100%;
+  background: #e6e5ea;
+  cursor: pointer;
+}
+
+#slider::-webkit-slider-thumb:hover {
+  background: #000000;
+  border: 1px solid #a4ffaf;
+}
+
+#slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e6e5ea;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:hover {
+  filter: brightness(0) invert(1);
+  cursor: pointer;
+}
+
+#generate-btn:hover img {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(80deg);
+}
