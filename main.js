@@ -47,7 +47,7 @@ generate.addEventListener("click", () => {
     b.style.border = "2px solid #E6E5EA";
   });
 
-  if (pool === "" || slider.value == 0) {
+  if (pool === "" || slider.value == "0") {
     password.textContent = "P4$5W0rD!";
     password.classList.remove("password");
     indicator.innerHTML = "";
