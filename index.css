@@ -1,42 +1,35 @@
+:root {
+  --color-green: #a4ffaf;
+  --color-white: #e6e5ea;
+  --color-dark: #18171f;
+  --color-red: #f64a4a;
+  --color-orange: #fb7c58;
+  --color-yellow: #f8cd65;
+  --border-default: 2px solid var(--color-white);
+  --border-green: 2px solid var(--color-green);
+  --thumb-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  --checkbox-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
 body {
   font-family: "JetBrains Mono", monospace;
 }
 
 .checkbox-box {
-  width: clamp(12px, 1.5vw, 14px);
-  height: clamp(12px, 1.5vw, 14px);
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
 }
 
 .box {
-  border: 2px solid #e6e5ea;
+  border: var(--border-default);
 }
 
 .password {
-  color: #e6e5ea;
+  color: var(--color-white);
 }
 
 .check-icon {
   display: none;
-}
-
-.uppercase {
-  background-color: #f64a4a;
-  border: none !important;
-}
-
-.lowercase {
-  background-color: #fb7c58;
-  border: none !important;
-}
-
-.number {
-  background-color: #f8cd65;
-  border: none !important;
-}
-
-.symbol {
-  background-color: #a4ffaf;
-  border: none !important;
 }
 
 .icon {
@@ -44,41 +37,41 @@ body {
 }
 
 .checked {
-  border: 2px solid #a4ffaf;
-  background-color: #a4ffaf;
+  border: var(--border-green);
+  background-color: var(--color-green);
 }
 
 .checkbox-box:hover {
-  border: 2px solid #a4ffaf;
+  border: var(--border-green);
 }
 
-#slider {
+.slider {
   background: linear-gradient(
     to right,
-    #a4ffaf var(--fill),
-    #18171f var(--fill)
+    var(--color-green) var(--fill),
+    var(--color-dark) var(--fill)
   );
 }
 
-#slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
   appearance: none;
-  width: clamp(15px, 1.5vw, 20px);
-  height: clamp(15px, 1.5vw, 20px);
+  width: var(--thumb-size);
+  height: var(--thumb-size);
   border-radius: 100%;
-  background: #e6e5ea;
+  background: var(--color-white);
   cursor: pointer;
 }
 
-#slider::-webkit-slider-thumb:hover {
+.slider::-webkit-slider-thumb:hover {
   background: #000000;
-  border: 1px solid #a4ffaf;
+  border: 1px solid var(--color-green);
 }
 
-#slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+.slider::-moz-range-thumb {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
   border-radius: 50%;
-  background: #e6e5ea;
+  background: var(--color-white);
   border: none;
   cursor: pointer;
 }
@@ -88,6 +81,6 @@ body {
   cursor: pointer;
 }
 
-#generate-btn:hover img {
+.generate-btn:hover img {
   filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(80deg);
 }

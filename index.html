@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       type="image/png"
@@ -11,14 +10,12 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="index.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Password generator</title>
   </head>
@@ -33,7 +30,6 @@
         <section>
           <div class="bg-[#24232c] flex justify-between items-center p-2 mb-3">
             <p id="password" class="text-[#54535B]">P4$5W0rD!</p>
-            <!-- #E6E5EA -->
             <div class="flex gap-1 items-center">
               <span
                 id="copied"
@@ -62,13 +58,14 @@
 
             <!-- Slider -->
             <div class="mb-4">
+              <label for="slider" class="sr-only">Character Length</label>
               <input
                 id="slider"
                 type="range"
                 min="0"
                 max="20"
                 value="0"
-                class="w-full h-1 appearance-none cursor-pointer rounded-none"
+                class="slider w-full h-1 appearance-none cursor-pointer rounded-none"
                 style="--fill: 0%"
               />
             </div>
@@ -76,58 +73,74 @@
             <!-- Lists -->
             <ul class="text-[11px] text-[#E6E5EA] mb-2">
               <li class="flex items-center gap-3 mb-2">
-                <div id="uppercase" class="flex items-center checkbox-box box">
-                  <img
-                    src="./assets/images/icon-check.svg"
-                    alt="check-icon"
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="sr-only" />
+                  <div
                     id="uppercase"
-                    class="check-icon"
-                  />
-                </div>
-                <span class="text-[clamp(10px,1.5vw,12px)]"
-                  >Include Uppercase Letters</span
-                >
+                    class="flex items-center checkbox-box box"
+                  >
+                    <img
+                      src="./assets/images/icon-check.svg"
+                      alt=""
+                      class="check-icon"
+                    />
+                  </div>
+                  <span class="text-[clamp(10px,1.5vw,12px)]"
+                    >Include Uppercase Letters</span
+                  >
+                </label>
               </li>
               <li class="flex items-center gap-3 mb-2">
-                <div id="lowercase" class="flex items-center checkbox-box box">
-                  <img
-                    src="./assets/images/icon-check.svg"
-                    alt="check-icon"
-                    class="check-icon"
-                  />
-                </div>
-                <span class="text-[clamp(10px,1.5vw,12px)]"
-                  >Include Lowercase Letters</span
-                >
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="sr-only" />
+                  <div
+                    id="lowercase"
+                    class="flex items-center checkbox-box box"
+                  >
+                    <img
+                      src="./assets/images/icon-check.svg"
+                      alt=""
+                      class="check-icon"
+                    />
+                  </div>
+                  <span class="text-[clamp(10px,1.5vw,12px)]"
+                    >Include Lowercase Letters</span
+                  >
+                </label>
               </li>
               <li class="flex items-center gap-3 mb-2">
-                <div id="numbers" class="flex items-center checkbox-box box">
-                  <img
-                    src="./assets/images/icon-check.svg"
-                    alt="check-icon"
-                    class="check-icon"
-                  />
-                </div>
-                <span class="text-[clamp(10px,1.5vw,12px)]"
-                  >Include Numbers</span
-                >
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="sr-only" />
+                  <div id="numbers" class="flex items-center checkbox-box box">
+                    <img
+                      src="./assets/images/icon-check.svg"
+                      alt=""
+                      class="check-icon"
+                    />
+                  </div>
+                  <span class="text-[clamp(10px,1.5vw,12px)]"
+                    >Include Numbers</span
+                  >
+                </label>
               </li>
               <li class="flex items-center gap-3">
-                <div id="symbols" class="flex items-center checkbox-box box">
-                  <img
-                    src="./assets/images/icon-check.svg"
-                    alt="check-icon"
-                    class="check-icon"
-                  />
-                </div>
-                <span class="text-[clamp(10px,1.5vw,12px)]"
-                  >Include Symbols</span
-                >
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="sr-only" />
+                  <div id="symbols" class="flex items-center checkbox-box box">
+                    <img
+                      src="./assets/images/icon-check.svg"
+                      alt=""
+                      class="check-icon"
+                    />
+                  </div>
+                  <span class="text-[clamp(10px,1.5vw,12px)]"
+                    >Include Symbols</span
+                  >
+                </label>
               </li>
             </ul>
 
             <!-- strength -->
-
             <div
               class="bg-[#14131B] flex justify-between items-center p-2 mb-2"
             >
@@ -157,7 +170,7 @@
             <!-- Generate button -->
             <div
               id="generate-btn"
-              class="hover:border-1 hover:text-[#A4FFAF] hover:border-[#A4FFAF] hover:bg-[#24232c] bg-[#A4FFAF] flex gap-1 items-center justify-center p-2"
+              class="generate-btn hover:border-1 hover:text-[#A4FFAF] hover:border-[#A4FFAF] hover:bg-[#24232c] bg-[#A4FFAF] flex gap-1 items-center justify-center p-2"
             >
               <span class="text-[10px]">GENERATE</span>
               <img
@@ -170,7 +183,6 @@
         </section>
       </main>
     </div>
-
     <script defer src="main.js"></script>
   </body>
 </html>

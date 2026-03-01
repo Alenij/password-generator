@@ -16,10 +16,10 @@ slider.addEventListener("input", () => {
   character.innerHTML = slider.value;
 });
 
-box.forEach((box) => {
-  box.addEventListener("click", () => {
-    box.classList.toggle("checked");
-    box.querySelector(".check-icon").classList.toggle("icon");
+box.forEach((b) => {
+  b.addEventListener("click", () => {
+    b.classList.toggle("checked");
+    b.querySelector(".check-icon").classList.toggle("icon");
   });
 });
 
